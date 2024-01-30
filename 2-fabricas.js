@@ -1,3 +1,4 @@
+// Armazena os dados em memória
 function criarPessoa(nome, anoDeNascimento, profissao) {
     return {
         nome,

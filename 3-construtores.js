@@ -1,3 +1,4 @@
+// Cria apontamentos de memória
 function Pessoa(nome, anoDeNascimento, profissao) {
     this.nome = nome;
     this.anoDeNascimento = anoDeNascimento;
