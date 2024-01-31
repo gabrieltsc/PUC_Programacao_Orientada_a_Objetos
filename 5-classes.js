@@ -15,14 +15,11 @@ class Pessoa {
     }
 
     mostraDados() {
-        return 'Nome: ' + this.nome + '\n' +
+        console.log('Nome: ' + this.nome + '\n' +
                 'Ano de nascimento: ' + this.anoDeNascimento + '\n' +
-                'Profissão: ' + this.profissao + '\n';
+                'Profissão: ' + this.profissao);
     }
 }
-
-const pessoa1 = new Pessoa('Gabriel Terry', 2000, 'Engenheiro de Software');
-console.log(pessoa1.mostraDados());
 
 
 class Estudante extends Pessoa {
@@ -32,15 +29,10 @@ class Estudante extends Pessoa {
     }
 
     mostraDados() {
-        return 'Nome: ' + this.nome + '\n' +
-                'Ano de nascimento: ' + this.anoDeNascimento + '\n' +
-                'Profissão: ' + this.profissao + '\n' +
-                'Matrícula: ' + this.matricula + '\n';
+        super.mostraDados();
+        console.log('Matrícula: ' + this.matricula);
     }
 }
-
-const aluno1 = new Estudante('Julio', 1999, 2616545);
-console.log(aluno1.mostraDados());
 
 
 class Professor extends Pessoa {
@@ -50,12 +42,40 @@ class Professor extends Pessoa {
     }
 
     mostraDados() {
-        return 'Nome: ' + this.nome + '\n' +
-                'Ano de nascimento: ' + this.anoDeNascimento + '\n' +
-                'Profissão: ' + this.profissao + '\n' +
-                'Titulação: ' + this.titulacao + '\n';
+        super.mostraDados();
+        console.log('Titulação: ' + this.titulacao);
     }
 }
 
+
+const pessoa1 = new Pessoa('Gabriel Terry', 2000, 'Engenheiro de Software');
+pessoa1.mostraDados();
+console.log('\n');
+
+const aluno1 = new Estudante('Julio', 1999, 2616545);
+aluno1.mostraDados();
+console.log('\n');
+
 const professor1 = new Professor('Martha', 1970, 'Mestre');
-console.log(professor1.mostraDados());
+professor1.mostraDados();
+console.log('\n');
+
+// Protótipo de apresentação do conteúdo do objetos
+console.log(professor1.valueOf()); 
+console.log(aluno1.valueOf());
+console.log(pessoa1.valueOf());
+
+const professor2 = new Professor("Adriano", 1983, "Especialista");
+console.log(professor2.valueOf());
+
+professor2.formacao = "Publicidade"; // Uma forma de adicionar um atributo novo
+console.log(professor2.valueOf());
+
+delete professor2.formacao;
+console.log(professor2.valueOf());
+
+// Criando um novo atributo acessível (mas invisível, no protótipo)
+Professor.prototype.formacao = "Favor inserir uma formação"; 
+
+console.log(professor1.valueOf());
+console.log(professor1.formacao);

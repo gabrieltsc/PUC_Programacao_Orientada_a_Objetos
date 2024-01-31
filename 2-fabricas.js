@@ -14,3 +14,5 @@ function criarPessoa(nome, anoDeNascimento, profissao) {
 const pessoa = criarPessoa('Fulano', 1990, 'Estudante');
 console.log(pessoa);
 console.log('Idade: ' + pessoa.calculaIdade());
+
+const pessoa2 = criarPessoa('Gabriel', 1990, 'Engenheiro de Software');

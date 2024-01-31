@@ -10,14 +10,14 @@ function Pessoa(nome, anoDeNascimento, profissao) {
 }
 
 const pessoa = new Pessoa('Fulano', 1990, 'Estudante');
-//console.log(pessoa.valueOf());
-//console.log(Object.getPrototypeOf(pessoa));
-//console.log(pessoa.constructor + '\n');
+console.log(pessoa.valueOf());
+console.log(Object.getPrototypeOf(pessoa));
+console.log(pessoa.constructor + '\n');
 
 const pessoa2 = Object.create(pessoa);
-//console.log(pessoa.valueOf());
-//console.log(Object.getPrototypeOf(pessoa2));
-//console.log(pessoa.constructor);
+console.log(pessoa.valueOf());
+console.log(Object.getPrototypeOf(pessoa2));
+console.log(pessoa.constructor);
 
 Pessoa.prototype.saudar = function() {
     return "Olá";
