@@ -23,27 +23,41 @@ class Pessoa {
 
 
 class Estudante extends Pessoa {
+    #matricula; // Atributo privado
     constructor(nome, anoDeNascimento, matricula){
         super(nome, anoDeNascimento, "Estudante");
-        this.matricula = matricula;
+        this.#matricula = matricula;
+    }
+
+    getMatricula(){
+        return this.#matricula;
+    }
+
+    setMatricula(valor){
+        this.#matricula = valor;
     }
 
     mostraDados() {
         super.mostraDados();
-        console.log('Matrícula: ' + this.matricula);
+        console.log('Matrícula: ' + this.getMatricula());
     }
 }
 
 
 class Professor extends Pessoa {
+    #titulacao
     constructor(nome, anoDeNascimento, titulacao){
         super(nome, anoDeNascimento, "Professor");
-        this.titulacao = titulacao;
+        this.#titulacao = titulacao;
+    }
+
+    getTitulacao() {
+        return this.#titulacao;
     }
 
     mostraDados() {
         super.mostraDados();
-        console.log('Titulação: ' + this.titulacao);
+        console.log('Titulação: ' + this.getTitulacao());
     }
 }
 
